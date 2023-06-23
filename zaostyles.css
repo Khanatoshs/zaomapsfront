@@ -1,0 +1,43 @@
+html { height: 100% }
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#map{
+    height: 100%;
+    width: 100%; 
+    }
+.title-container{
+    height: 10%;
+    width: 100%;
+}
+.map-container{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.data-container{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    height: 40%;
+    width: 100%;
+}
+.tree-row{
+    border: 1px solid black;
+}
+.miniature{
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+    margin-bottom: 0.5em
+}
+.minititle{
+    margin-bottom:0.5em !important;
+    text-align:center
+}
+
+.main-container{
+    height: 100vh;
+}

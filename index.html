@@ -3,24 +3,7 @@
 
     <head>
     <title>Zao-chan</title>
-        <style>
-            html { height: 100% }
-            body { height: 100%; margin: 0; padding: 0;}
-            #map{
-                height: 500px;
-                width: 100%; 
-                }
-            .data-container{
-                border: 1px solid black;
-                height: 400px;
-                width: 100%;
-            }
-            .tree-row{
-                border: 1px solid black;
-            }
-            .miniature{margin-right: 0.5em;margin-left: 0.5em;margin-bottom: 0.5em}
-            .minititle{margin-bottom:0.5em !important;text-align:center}
-          </style>
+          <link href="zaostyles.css" rel="stylesheet"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -33,21 +16,22 @@
     <script src="https://unpkg.com/georaster-layer-for-leaflet"></script>
     <script src="https://unpkg.com/leaflet-lasso@2.2.12/dist/leaflet-lasso.umd.min.js"></script>
     <script src="shp.js"></script>
-
-   
-    
     
 </head>
 <body>
-    <div class="container text-center">
+    <div class="main-container container text-center ">
         <div class="row">
             <div class="col">
-                <h3>Zao-chan</h3>
+                <div class="title-container">
+                    <h3>Zao-chan</h3>
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <div id = map></div>
+                <div class="map-container">
+                    <div id = map></div>
+                </div>
             </div>
         </div>
         <div class="row">
