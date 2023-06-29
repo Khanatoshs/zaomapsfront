@@ -20,8 +20,6 @@ body {
 }
 .data-container{
     border: 1px solid black;
-    display: flex;
-    flex-direction: row;
     height: 40vh;
     width: 100%;
     padding-bottom: 10px;

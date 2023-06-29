@@ -106,7 +106,6 @@ var he19layer = addTreeLayer('He19.zip','#00ff91','healthy')
     
     var layerControl = L.control.layers(null, overlayMaps).addTo(map);
     he19layer.once("data:loaded", function() {
-        console.log("finished loaded shapefile");
         
            c1 = L.latLng(he19layer.getBounds()['_northEast']['lat'],he19layer.getBounds()['_northEast']['lng'])
            c2 = L.latLng(he19layer.getBounds()['_southWest']['lat'],he19layer.getBounds()['_southWest']['lng'])
