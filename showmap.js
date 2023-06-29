@@ -65,9 +65,9 @@ function addTreeLayer(zipname,color,category){
     });
     return layer
 }
-var de19layer = addTreeLayer('De19.zip','#ff0000','dead')
-var da19layer = addTreeLayer('Da19.zip','#ff7800','damaged')
-var he19layer = addTreeLayer('He19.zip','#00ff91','healthy')
+var de19layer = addTreeLayer('data/De19.zip','#ff0000','dead')
+var da19layer = addTreeLayer('data/Da19.zip','#ff7800','damaged')
+var he19layer = addTreeLayer('data/He19.zip','#00ff91','healthy')
 
     
     
