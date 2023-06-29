@@ -18,7 +18,6 @@ function clearTreeList(){
 
 function addTree(id){
     let datTree = document.getElementById("treedata");
-    //datTree.innerHTML += '<div class = "row"><div class = "col-md"><h5 class="minititle">2019</h5><img class="miniature" src ="img/trees/'+id+'_19.png" /></div>'
     datTree.innerHTML +=  '<div class = "row tree-row"><div class = "row"><div class = "col"><h5>Tree id:'+ id+'</h5></div></div><div class = "row"><div class = "col-md"><h5 class="minititle">2019</h5><img class="miniature" src ="img/trees/'+id+'_19.png" /></div><div class = "col-md"><h5 class="minititle">2020</h5><img class="miniature" src ="img/trees/'+id+'_20.png" /></div><div class = "col-md"><h5 class="minititle">2021</h5><img class="miniature" src ="img/trees/'+id+'_21.png" /></div><div class = "col-md"><h5 class="minititle">2022</h5><img class="miniature" src ="img/trees/'+id+'_22.png" /></div></div></div>'
 }
 function addTreeList(treelist){
@@ -31,7 +30,6 @@ function addTreeList(treelist){
     });
 }
 function clickMarker(e){
-    //console.log(e.target.options.id)
     e.target.setStyle({fillColor: '#89CFF0'});
     addTree(e.target.options.id)
 }
@@ -42,14 +40,10 @@ function clickMarker(e){
       maxZoom: 20
   }).addTo(map);
 
-  var de19layer = new L.Shapefile('De19.zip', {
+function addTreeLayer(zipname,color,category){
+    var layer = new L.Shapefile(zipname, {
         onEachFeature: function(feature, layer) {
             if (feature.properties) {
-                /*layer.bindPopup(Object.keys(feature.properties).map(function(k) {
-                    return '<h4 style="text-align:center">Tree Id: ' + feature.properties[k] + '</h4><div><div style="display:inline-grid"><h5 class="minititle">2019</h5><img class="miniature" src ="img/trees/'+feature.properties[k]+'_19.png" /></div><div style="display:inline-grid"><h5 class="minititle">2020</h5><img class="miniature" src ="img/trees/'+feature.properties[k]+'_20.png" /></div></div><div><div style="display:inline-grid"><h5 class="minititle">2021</h5><img class="miniature" src ="img/trees/'+feature.properties[k]+'_21.png" /></div><div style="display:inline-grid"><h5 class="minititle">2022</h5><img class="miniature" src ="img/trees/'+feature.properties[k]+'_22.png" /></div></div>';
-                }).join("<br />"), {
-                    maxHeight: 200
-                });*/
                 layer.on({
                     click: clickMarker
                 });
@@ -58,72 +52,23 @@ function clickMarker(e){
         pointToLayer: function (feature, latlng) {
             var DeadMarker = {
                 radius: 8,
-                fillColor: "#ff0000",
+                fillColor: color,
                 color: "#000",
                 weight: 1,
                 opacity: 1,
                 fillOpacity: 0.8,
                 id:feature.properties['Field'],
-                type:'dead'
+                type:category
             };
                 return L.circleMarker(latlng, DeadMarker);
             }
     });
-var da19layer = new L.Shapefile('Da19.zip', {
-        onEachFeature: function(feature, layer) {
-            if (feature.properties) {
-                /*layer.bindPopup(Object.keys(feature.properties).map(function(k) {
-                    return '<h4 style="text-align:center">Tree Id: ' + feature.properties[k] + '</h4><div><div style="display:inline-grid"><h5 class="minititle">2019</h5><img class="miniature" src ="img/trees/'+feature.properties[k]+'_19.png" /></div><div style="display:inline-grid"><h5 class="minititle">2020</h5><img class="miniature" src ="img/trees/'+feature.properties[k]+'_20.png" /></div></div><div><div style="display:inline-grid"><h5 class="minititle">2021</h5><img class="miniature" src ="img/trees/'+feature.properties[k]+'_21.png" /></div><div style="display:inline-grid"><h5 class="minititle">2022</h5><img class="miniature" src ="img/trees/'+feature.properties[k]+'_22.png" /></div></div>';
-                }).join("<br />"), {
-                    maxHeight: 200
-                });*/
-                layer.on({
-                    click: clickMarker
-                });
-            }
-        },
-        pointToLayer: function (feature, latlng) {
-            var DamMarker = {
-                radius: 8,
-                fillColor: "#ff7800",
-                color: "#000",
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 0.8,
-                id:feature.properties['Field'],
-                type:'damaged'
-            };
-                return L.circleMarker(latlng, DamMarker);
-            }
-    });
-    
-var he19layer = new L.Shapefile('He19.zip', {
-        onEachFeature: function(feature, layer) {
-            if (feature.properties) {
-                /*layer.bindPopup(Object.keys(feature.properties).map(function(k) {
-                    return '<h4 style="text-align:center">Tree Id: ' + feature.properties[k] + '</h4><div><div style="display:inline-grid"><h5 class="minititle">2019</h5><img class="miniature" src ="img/trees/'+feature.properties[k]+'_19.png" /></div><div style="display:inline-grid"><h5 class="minititle">2020</h5><img class="miniature" src ="img/trees/'+feature.properties[k]+'_20.png" /></div></div><div><div style="display:inline-grid"><h5 class="minititle">2021</h5><img class="miniature" src ="img/trees/'+feature.properties[k]+'_21.png" /></div><div style="display:inline-grid"><h5 class="minititle">2022</h5><img class="miniature" src ="img/trees/'+feature.properties[k]+'_22.png" /></div></div>';
-                }).join("<br />"), {
-                    maxHeight: 200
-                });*/
-                layer.on({
-                    click: clickMarker
-                });
-            }
-        },
-        pointToLayer: function (feature, latlng) {
-            var HealthMarker = {
-                radius: 8,
-                fillColor: "#00ff91",
-                color: "#000",
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 0.8,
-                id:feature.properties['Field'],
-                type:'healthy'
-            };
-                return L.circleMarker(latlng, HealthMarker);
-            }
-    });
+    return layer
+}
+var de19layer = addTreeLayer('De19.zip','#ff0000','dead')
+var da19layer = addTreeLayer('Da19.zip','#ff7800','damaged')
+var he19layer = addTreeLayer('He19.zip','#00ff91','healthy')
+
     
     
     de19layer.addTo(map);
@@ -211,6 +156,5 @@ var he19layer = new L.Shapefile('He19.zip', {
         resetSelectedState();
     });
     map.on('lasso.finished', event => {
-        //console.log(event.layers);
         setSelectedLayers(event.layers)
     });

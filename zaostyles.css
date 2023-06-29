@@ -9,11 +9,11 @@ body {
     width: 100%; 
     }
 .title-container{
-    height: 10%;
+    height: 10vh;
     width: 100%;
 }
 .map-container{
-    height: 50%;
+    height: 50vh;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -22,8 +22,10 @@ body {
     border: 1px solid black;
     display: flex;
     flex-direction: row;
-    height: 40%;
+    height: 40vh;
     width: 100%;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 .tree-row{
     border: 1px solid black;
