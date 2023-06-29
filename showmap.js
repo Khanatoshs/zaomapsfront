@@ -65,9 +65,24 @@ function addTreeLayer(zipname,color,category){
     });
     return layer
 }
+
+for(let i=0;i<4;i++){
+
+}
+
 var de19layer = addTreeLayer('data/De19.zip','#ff0000','dead')
 var da19layer = addTreeLayer('data/Da19.zip','#ff7800','damaged')
 var he19layer = addTreeLayer('data/He19.zip','#00ff91','healthy')
+var de20layer = addTreeLayer('data/De20.zip','#ff0000','dead')
+var da20layer = addTreeLayer('data/Da20.zip','#ff7800','damaged')
+var he20layer = addTreeLayer('data/He20.zip','#00ff91','healthy')
+var de21layer = addTreeLayer('data/De21.zip','#ff0000','dead')
+var da21layer = addTreeLayer('data/Da21.zip','#ff7800','damaged')
+var he21layer = addTreeLayer('data/He21.zip','#00ff91','healthy')
+var de22layer = addTreeLayer('data/De22.zip','#ff0000','dead')
+var da22layer = addTreeLayer('data/Da22.zip','#ff7800','damaged')
+var he22layer = addTreeLayer('data/He22.zip','#00ff91','healthy')
+
 
     
     
@@ -101,7 +116,15 @@ var he19layer = addTreeLayer('data/He19.zip','#00ff91','healthy')
         "2019 - Dead": de19layer,
         "2019 - Damaged": da19layer,
         "2019 - Healthy": he19layer,
-        
+        "2020 - Dead": de20layer,
+        "2020 - Damaged": da20layer,
+        "2020 - Healthy": he20layer,
+        "2021 - Dead": de21layer,
+        "2021 - Damaged": da21layer,
+        "2021 - Healthy": he21layer,
+        "2022 - Dead": de22layer,
+        "2022 - Damaged": da22layer,
+        "2022 - Healthy": he22layer,
     };
     
     var layerControl = L.control.layers(null, overlayMaps).addTo(map);
